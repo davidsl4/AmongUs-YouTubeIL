@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YouTubeIL", "YouTubeIL\YouTubeIL.csproj", "{FD6E37A3-8163-4B5C-9459-BAB51EC1F79C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD6E37A3-8163-4B5C-9459-BAB51EC1F79C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD6E37A3-8163-4B5C-9459-BAB51EC1F79C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD6E37A3-8163-4B5C-9459-BAB51EC1F79C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD6E37A3-8163-4B5C-9459-BAB51EC1F79C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

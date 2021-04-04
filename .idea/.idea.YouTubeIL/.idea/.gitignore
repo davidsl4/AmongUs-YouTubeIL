@@ -1,0 +1,11 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/contentModel.xml
+/projectSettingsUpdater.xml
+/modules.xml
+/.idea.YouTubeIL.iml
+# Datasource local storage ignored files
+/../../../../../../../../../:\Users\d6000\RiderProjects\Impostor.Plugins.Client\YouTubeIL\.idea\.idea.YouTubeIL\.idea/dataSources/
+/dataSources.local.xml
