@@ -25,6 +25,7 @@ namespace YouTubeIL
             Log.LogInfo("YouTubeIL plugin loading...");
             Harmony.PatchAll();
             
+            Patches.VersionShower.Initialize();
             AddCustomServers();
         }
 

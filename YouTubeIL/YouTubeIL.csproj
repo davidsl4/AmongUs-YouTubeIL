@@ -8,6 +8,9 @@
         <Description>YouTubeIL base plugin for Among Us</Description>
         <Authors>r0den</Authors>
         <LangVersion>9</LangVersion>
+        
+        <VersionPrefix>0.1.0</VersionPrefix>
+        <VersionSuffix>dev</VersionSuffix>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(GamePlatform)' == 'Steam'">
@@ -30,7 +33,6 @@
 
     <ItemGroup>
       <Folder Include="Libs" />
-      <Folder Include="Patches" />
       <Folder Include="Unity\Prefabs" />
     </ItemGroup>
 
