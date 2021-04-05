@@ -1,18 +1,19 @@
 ﻿extern alias jb;
-
 using System;
 using System.Linq;
 using System.Net;
 using BepInEx;
+using BepInEx.IL2CPP;
 using HarmonyLib;
 using UnhollowerBaseLib;
 
-namespace YouTubeIL.BasePlugin
+namespace YouTubeIL
 {
     [BepInPlugin(Id)]
     [BepInProcess("Among Us.exe")]
     [jb::JetBrains.Annotations.UsedImplicitly]
-    public class EntryPoint : BepInEx.IL2CPP.BasePlugin
+    // ReSharper disable once InconsistentNaming
+    public class YouTubeIL : BasePlugin
     {
         [jb::JetBrains.Annotations.UsedImplicitly]
         public const string Id = "il.r0den.YouTubeIL";
@@ -49,15 +50,15 @@ namespace YouTubeIL.BasePlugin
                 }
             }
             
-            const ushort port = 22003;
+            const ushort port = 22023;
             
             var defaultRegions = ServerManager.DefaultRegions.ToList();
             Il2CppReferenceArray<ServerInfo> serverInfo = new ServerInfo[] { 
                 new(name, ip, port)
             };
-
+            
             defaultRegions.Insert(0,
-                new StaticRegionInfo(name, StringNames.NoTranslation, ip, serverInfo).Cast<IRegionInfo>());
+                new StaticRegionInfo(name, StringNames.NoTranslation, null, serverInfo).Cast<IRegionInfo>());
 
             ServerManager.DefaultRegions = defaultRegions.ToArray();
         }
