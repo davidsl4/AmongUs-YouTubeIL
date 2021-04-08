@@ -1,5 +1,8 @@
+using System.Diagnostics.CodeAnalysis;
+
 namespace YouTubeIL.Networking
 {
+    [SuppressMessage("ReSharper", "UnusedMember.Global")]
     public enum RpcCalls : byte
     {
         PlayAnimation = 0,

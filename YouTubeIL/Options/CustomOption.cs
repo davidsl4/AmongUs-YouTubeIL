@@ -37,7 +37,7 @@ namespace YouTubeIL.Options
         protected readonly CustomOptionType OptionType;
         protected object OldValue;
         protected object Value;
-        protected CustomOption ParentOption;
+        protected readonly CustomOption ParentOption;
         protected readonly HashSet<CustomOption> ChildOptions = new();
         protected OptionBehaviour GameOption;
 
@@ -202,7 +202,7 @@ namespace YouTubeIL.Options
         /// </summary>
         /// <param name="newValue">The new value</param>
         protected virtual OptionOnValueChangedEventArgs CreateOnValueChangedEventArgs(object newValue) =>
-            new OptionOnValueChangedEventArgs(newValue, Value);
+            new (newValue, Value);
 
         /// <summary>
         /// Returns event args of type <see cref="OptionValueChangedEventArgs"/> or a derivative.
