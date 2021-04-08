@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace YouTubeIL.Options
 {
@@ -41,20 +42,16 @@ namespace YouTubeIL.Options
             return true;
         }
         
-        /// <summary>
-        /// Increases <see cref="CustomOption.Value"/> by 1 while it's lower than the length of <see cref="_values"/> or sets it back to 0 once the length is exceeded.
-        /// </summary>
         public void Increase()
         {
-            SetValue((GetValue() + 1) % _values.Length);
+            var newValue = Mathf.Clamp(GetValue() + 1, 0, _values.Length - 1);
+            SetValue(newValue);
         }
 
-        /// <summary>
-        /// Decreases <see cref="CustomOption.Value"/> by 1 while it's higher than 0 or sets it back to the length of <see cref="_values"/>-1.
-        /// </summary>
         public void Decrease()
         {
-            SetValue((GetValue() + (_values.Length - 1)) % _values.Length);
+            var newValue = Mathf.Clamp(GetValue() - 1, 0, _values.Length - 1);
+            SetValue(newValue);
         }
 
         private void SetValue(int value, bool raiseEvents = true)

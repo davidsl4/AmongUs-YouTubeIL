@@ -23,15 +23,18 @@ namespace YouTubeIL.Options
         /// </summary>
         private readonly float _increment;
 
+        private readonly string _suffix;
+
         public CustomNumberOption(string id, string name, float value, float min = 0.25f, float max = 5f,
-            float increment = 0.25f, CustomOption parentOption = null) : base(id, name, CustomOptionType.Number, value,
+            float increment = 0.25f, string suffix = "", CustomOption parentOption = null) : base(id, name, CustomOptionType.Number, value,
             parentOption)
         {
             _min = Mathf.Min(value, min);
             _max = Mathf.Max(value, max);
             _increment = increment;
+            _suffix = suffix;
             
-            ValueStringFormat = (_, v) => v.ToString();
+            ValueStringFormat = (_, v) => v + suffix;
         }
 
         protected override bool GameOptionCreated(OptionBehaviour o)
@@ -79,9 +82,10 @@ namespace YouTubeIL.Options
         /// <param name="min">The lowest value permitted, may be overriden if <paramref name="value"/> is lower</param>
         /// <param name="max">The highest value permitted, may be overriden if <paramref name="value"/> is higher</param>
         /// <param name="increment">The increment or decrement steps when <see cref="CustomNumberOption.Increase"/> or <see cref="CustomNumberOption.Decrease"/> are called</param>
+        /// <param name="suffix">The ending for the number in the views</param>
         /// <param name="parentOption">The parent option</param>
         public static CustomNumberOption AddNumber(string id, string name, float value, float min = 0.25F,
-            float max = 5F, float increment = 0.25F, CustomOption parentOption = null) =>
-            new(id, name, value, min, max, increment, parentOption);
+            float max = 5F, float increment = 0.25F, string suffix = "", CustomOption parentOption = null) =>
+            new(id, name, value, min, max, increment, suffix, parentOption);
     }
 }

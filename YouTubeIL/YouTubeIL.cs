@@ -26,6 +26,7 @@ namespace YouTubeIL
             
             Patches.VersionShower.Initialize();
             AddCustomServers();
+            CreateCustomOptions();
         }
 
         private static void AddCustomServers()
@@ -40,6 +41,11 @@ namespace YouTubeIL
             defaultRegions.Insert(0,
                 new DnsRegionInfo(hostname, name, StringNames.NoTranslation, "127.0.0.1", port).Cast<IRegionInfo>());
             ServerManager.DefaultRegions = defaultRegions.ToArray();
+        }
+
+        private static void CreateCustomOptions()
+        {
+            Modes.HideAndSeek.Options.CreateCustomOptions();
         }
     }
 }
