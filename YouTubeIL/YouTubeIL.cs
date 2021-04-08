@@ -4,8 +4,8 @@ using System.Linq;
 using System.Net;
 using BepInEx;
 using BepInEx.IL2CPP;
+using BepInEx.Logging;
 using HarmonyLib;
-using UnhollowerBaseLib;
 
 namespace YouTubeIL
 {
@@ -17,12 +17,14 @@ namespace YouTubeIL
     {
         [jb::JetBrains.Annotations.UsedImplicitly]
         public const string Id = "il.r0den.YouTubeIL";
-        
+
+        internal static ManualLogSource Logger;
         private Harmony Harmony { get; } = new(Id);
         
         public override void Load()
         {
-            Log.LogInfo("YouTubeIL plugin loading...");
+            Logger = Log;
+            Logger.LogInfo("YouTubeIL plugin loading...");
             Harmony.PatchAll();
             
             Patches.VersionShower.Initialize();

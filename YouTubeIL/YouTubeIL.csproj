@@ -29,6 +29,10 @@
         <PackageReference Include="JetBrains.Annotations" Version="2021.1.0-eap01" />
 
         <PackageReference Include="Reactor.OxygenFilter.MSBuild" Version="0.3.0" />
+
+        <Reference Include="Essentials, Version=0.2.0.0, Culture=neutral, PublicKeyToken=null">
+            <HintPath>Libs\Essentials-2021.3.31.3s.dll</HintPath>
+        </Reference>
     </ItemGroup>
 
     <ItemGroup>
